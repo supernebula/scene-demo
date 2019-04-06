@@ -10,6 +10,7 @@
         <module name="seckill-db-generator" />
         <module name="seckill-domain" />
         <module name="seckill-service" />
+        <module name="seckill-website" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
