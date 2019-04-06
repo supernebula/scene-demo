@@ -11,3 +11,27 @@ https://blog.csdn.net/icangfeng/article/details/81201575
 实战讲解高并发和秒杀抢购系统设计
 
 https://cloud.tencent.com/developer/article/1346263
+
+从0到1构建分布式秒杀系统，脱离案例讲架构都是耍流氓 
+
+https://gitee.com/52itstyle/spring-boot-seckill 
+
+SpringBoot实现Java高并发秒杀系统之DAO层开发（一） 
+
+https://tycoding.cn/2018/10/12/seckill-dao/
+
+SpringBoot实现Java高并发秒杀系统之并发优化（四）
+
+https://tycoding.cn/2018/10/15/seckill/
+
+Java秒杀 抢购 (Seckill based on Spring Boot)
+
+https://ctolib.com/liushaoming-jseckill-.html
+
+实现一个秒杀系统
+
+https://www.itcodemonkey.com/article/13125.html
+
+Spring MVC+bootstrap+redis+mybatis整合开发开源高并发秒杀商品系统
+
+http://www.zuidaima.com/share/2889302135589888.htm

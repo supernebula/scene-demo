@@ -6,8 +6,15 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="seckill" />
+        <module name="seckill-dao" />
+        <module name="seckill-db-generator" />
+        <module name="seckill-domain" />
+        <module name="seckill-service" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="seckill-dao" target="1.8" />
+      <module name="seckilldao" target="1.5" />
+    </bytecodeTargetLevel>
   </component>
 </project>
