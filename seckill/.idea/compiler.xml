@@ -14,7 +14,6 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="seckill-dao" target="1.8" />
       <module name="seckilldao" target="1.5" />
     </bytecodeTargetLevel>
   </component>

@@ -7,5 +7,5 @@ public interface CustomSeckillMapper {
 
     int reduceStock(@Param("seckillId") long seckillId, @Param("killTime") Date killTime);
 
-    int insertOrder(@Param("seckillId") long seckillId, @Param("payAmount") int payAmount, @Param("userPhone") long userPhone);
+    int insertOrder(@Param("seckillId") long seckillId, @Param("payAmount") long payAmount, @Param("userPhone") long userPhone);
 }
