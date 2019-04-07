@@ -89,15 +89,15 @@ public class SeckillServiceImpl implements SeckillService {
 
         try {
             //记录秒杀订单信息
-            int insertCount = customSeckillMapper.insertOrder(seckillId, payAmount, userPhone);
+            Integer insertCount = customSeckillMapper.insertOrder(seckillId, payAmount, userPhone);
             //唯一值：seckillId、userPhone，保证一个用户只能秒杀意见商品
-            if (insertCount <= 0) {
+            if (insertCount == null || insertCount <= 0) {
                 //重复秒杀
                 throw new RepeatKillException("seckill repeated");
             } else {
                 //减库存
-                int updateCount = customSeckillMapper.reduceStock(seckillId, nowTime);
-                if (updateCount <= 0) {
+                Integer updateCount = customSeckillMapper.reduceStock(seckillId, nowTime);
+                if (updateCount == null || updateCount <= 0) {
                     //没有更新记录，秒杀结束
                     throw new SeckillCloseException("seckill is closed");
                 } else {

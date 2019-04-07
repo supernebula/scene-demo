@@ -5,7 +5,7 @@ import java.util.Date;
 
 public interface CustomSeckillMapper {
 
-    int reduceStock(@Param("seckillId") long seckillId, @Param("killTime") Date killTime);
+    Integer reduceStock(@Param("seckillId") long seckillId, @Param("killTime") Date killTime);
 
-    int insertOrder(@Param("seckillId") long seckillId, @Param("payAmount") long payAmount, @Param("userPhone") long userPhone);
+    Integer insertOrder(@Param("seckillId") long seckillId, @Param("payAmount") long payAmount, @Param("userPhone") long userPhone);
 }

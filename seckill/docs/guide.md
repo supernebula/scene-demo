@@ -35,3 +35,21 @@ https://www.itcodemonkey.com/article/13125.html
 Spring MVC+bootstrap+redis+mybatis整合开发开源高并发秒杀商品系统
 
 http://www.zuidaima.com/share/2889302135589888.htm
+
+
+## Issue
+
+mybatis 允许一次性执行多条sql语句
+
+https://blog.csdn.net/ysk_xh_521/article/details/80812835
+
+https://blog.csdn.net/loveer0/article/details/81142055
+
+SpringBoot @CookieValue cookie取不到
+
+https://www.imooc.com/qadetail/226597
+
+mysql使用ROW_COUNT()返回插入、更新、删除操作影响行数
+
+https://blog.csdn.net/qingzai_/article/details/50668123
+

@@ -1,8 +1,11 @@
 package com.evol.model;
 
+import lombok.Data;
+
 /**
  *暴露秒杀
  */
+@Data
 public class Exposer {
 
     //是否开启秒杀

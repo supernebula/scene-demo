@@ -1,7 +1,9 @@
 package com.evol.model;
 
 import com.evol.entity.SeckillOrder;
+import lombok.Data;
 
+@Data
 public class SeckillExecution {
 
     private Long seckillId;
