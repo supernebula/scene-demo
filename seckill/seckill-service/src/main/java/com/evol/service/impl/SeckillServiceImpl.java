@@ -34,7 +34,7 @@ public class SeckillServiceImpl implements SeckillService {
     private final String salt = "sjajaspu-i-2jrfm;sd";
 
     //设置秒杀redis缓存的key
-    private final String key = "seckill";
+    private final String REDIS_SECKILL_KEY = "seckill";
 
     @Autowired
     private RedisTemplate redisTemplate;
@@ -77,10 +77,10 @@ public class SeckillServiceImpl implements SeckillService {
             //查询数据库中秒杀列表数据，并将列表数据循环放入redis缓存中
             //seckillList = seckillMapper.findAll();
             SeckillExample example = new SeckillExample();
-            List<Seckill> list = seckillMapper.selectByExample(example);
+            seckillList = seckillMapper.selectByExample(example);
             for (Seckill seckill : seckillList){
                 //将秒杀列表数据依次放入redis缓存中，key:秒杀表的ID值；value:秒杀商品数据
-                redisTemplate.boundHashOps(key).put(seckill.getId(), seckill);
+                redisTemplate.boundHashOps(REDIS_SECKILL_KEY).put(seckill.getId(), seckill);
                 logger.info("findAll -> 从数据库中读取放入缓存中");
             }
         }else{
@@ -119,7 +119,7 @@ public class SeckillServiceImpl implements SeckillService {
 
     @Override
     public Exposer exportSeckillUrl(long seckillId) {
-        Seckill seckill = (Seckill) redisTemplate.boundHashOps(key).get(seckillId);
+        Seckill seckill = (Seckill) redisTemplate.boundHashOps(REDIS_SECKILL_KEY).get(seckillId);
         if (seckill == null) {
             //说明redis缓存中没有此key对应的value
             //查询数据库，并将数据放入缓存中
@@ -129,7 +129,7 @@ public class SeckillServiceImpl implements SeckillService {
                 return new Exposer(false, seckillId);
             } else {
                 //查询到了，存入redis缓存中。 key:秒杀表的ID值； value:秒杀表数据
-                redisTemplate.boundHashOps(key).put(seckill.getId(), seckill);
+                redisTemplate.boundHashOps(REDIS_SECKILL_KEY).put(seckill.getId(), seckill);
                 logger.info("RedisTemplate -> 从数据库中读取并放入缓存中");
             }
         } else {
@@ -243,7 +243,7 @@ public class SeckillServiceImpl implements SeckillService {
                     SeckillOrder seckillOrder = seckillOrderMapper.selectByPrimaryKey(key);
 
                     //更新缓存（更新库存数量）
-                    Seckill seckill = (Seckill) redisTemplate.boundHashOps(key).get(seckillId);
+                    Seckill seckill = (Seckill) redisTemplate.boundHashOps(REDIS_SECKILL_KEY).get(seckillId);
                     seckill.setStockNumber(seckill.getStockNumber() - 1);
                     redisTemplate.boundHashOps(key).put(seckillId, seckill);
 

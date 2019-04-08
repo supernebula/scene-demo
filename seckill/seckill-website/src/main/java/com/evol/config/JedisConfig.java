@@ -21,16 +21,20 @@ public class JedisConfig {
     @Value("${spring.redis.timeout}")
     private int timeout;
 
-    @Value("${spring.redis.jedis.pool.max-active}")
+    //@Value("${spring.redis.jedis.pool.max-active}")
+    @Value("${spring.redis.pool.max-active}")
     private int maxActive;
 
-    @Value("${spring.redis.jedis.pool.max-idle}")
+    //@Value("${spring.redis.jedis.pool.max-idle}")
+    @Value("${spring.redis.pool.max-idle}")
     private int maxIdle;
 
-    @Value("${spring.redis.jedis.pool.min-idle}")
+    //@Value("${spring.redis.jedis.pool.min-idle}")
+    @Value("${spring.redis.pool.min-idle}")
     private int minIdle;
 
-    @Value("${spring.redis.jedis.pool.max-wait}")
+    //@Value("${spring.redis.jedis.pool.max-wait}")
+    @Value("${spring.redis.pool.max-wait}")
     private long maxWaitMillis;
 
     @Bean
