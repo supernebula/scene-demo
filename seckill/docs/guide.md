@@ -53,3 +53,7 @@ mysql使用ROW_COUNT()返回插入、更新、删除操作影响行数
 
 https://blog.csdn.net/qingzai_/article/details/50668123
 
+Spring Boot使用Spring Data Redis操作Redis（单机/集群）
+
+http://www.cnblogs.com/EasonJim/p/7805665.html
+
